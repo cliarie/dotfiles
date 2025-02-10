@@ -1,0 +1,50 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "languages": {
+    "Python": {
+      "show_inline_completions": true
+    }
+  },
+  "lsp": {
+    "clangd": {
+      "binary": {
+        "path": "/path/to/compiler",
+        "arguments": [
+          "--background-index",
+          "--compile-commands-dir=build",
+          "--clang-tidy",
+          "--clang-tidy-checks=*",
+          "--header-insertion=never",
+          "--header-insertion-decorators=none"
+        ]
+      }
+    }
+  },
+  "show_inline_completions": true,
+  "inline_completions": {
+    "disabled_globs": [".env", "cses/*", "python/brackets.py", "plaid.py"]
+  },
+  "base_keymap": "VSCode",
+  "theme": "Andromeda",
+  "vim_mode": true,
+  "ui_font_size": 14,
+  "buffer_font_size": 13,
+  "buffer_font_family": "PragmataPro Liga",
+  // "buffer_font_family": "Times New Roman",
+  // "ui_font_family": "PragmataPro Mono Liga",
+  "terminal": {
+    "shell": {
+      "program": "fish"
+    },
+    "font_features": {
+      "ss13": true
+    }
+  }
+}
