@@ -9,6 +9,8 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+vim.opt.clipboard="unnamedplus"
+
 local lazy_config = require "configs.lazy"
 
 -- load plugins

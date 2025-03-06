@@ -21,7 +21,7 @@ fzf --fish | source
 starship init fish | source
 
 set -g fish_greeting "hi claire <3"
-set -gx PATH /opt/homebrew/opt/trash-cli/bin $PATH
+set -gx PATH $HOME/.cargo/bin $PATH
 
 alias ls='eza --icons -F -H --group-directories-first --git'
 alias cat bat
@@ -31,7 +31,7 @@ alias t tmux
 alias wez='wezterm cli'
 alias rm trash
 alias config='/usr/bin/git --git-dir=/Users/gavinwang/.cfg/ --work-tree=/Users/gavinwang/.config'
-
+alias zen="appimage-run ~/Downloads/zen-x86_64.AppImage"
 # option l to search git log
 fzf_configure_bindings --git_log=\cg --git_status=\cs --directory=\cf --processes=\cp --variables=\cv
 

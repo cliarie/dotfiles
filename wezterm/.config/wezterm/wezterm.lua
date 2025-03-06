@@ -20,8 +20,8 @@ config.font_size = 14.0
 config.font =
   wezterm.font('PragmataPro Liga', { weight = 200, italic = false })
 
-config.default_prog = { "/opt/homebrew/bin/fish", "-l" }
-
+config.default_prog = { "/run/current-system/sw/bin/fish", "-l" }
+config.hide_mouse_cursor_when_typing = false
 local act = wezterm.action
 
 local w = require('wezterm')

@@ -74,7 +74,7 @@ return {
             vim.keymap.del({ "x", "o" }, "X")
         end,
     },
-    {
+    {     
         "zbirenbaum/copilot.lua",
         event = "InsertEnter",
         config = function()
