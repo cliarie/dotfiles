@@ -24,7 +24,6 @@ set -g fish_greeting "hi claire <3"
 set -gx PATH /opt/homebrew/opt/trash-cli/bin $PATH
 
 alias ls='eza --icons -F -H --group-directories-first --git'
-alias cat bat
 alias v nvim
 alias cd z
 alias t tmux
