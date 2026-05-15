@@ -12,6 +12,20 @@ return {
 
         require('nord').set()
 
+        local function clear_bg()
+          for _, g in ipairs({ 'Normal', 'NormalNC', 'NormalFloat', 'FloatBorder', 'SignColumn' }) do
+            vim.api.nvim_set_hl(0, g, { bg = 'NONE' })
+          end
+        end
+        clear_bg()
+
+        vim.api.nvim_create_autocmd('TermOpen', {
+          callback = function()
+            vim.wo.winhighlight = 'Normal:Normal,NormalNC:NormalNC'
+            vim.cmd('setlocal nonumber norelativenumber signcolumn=no')
+          end,
+        })
+
         -- Toggle background transparency
         local bg_transparent = true
 
@@ -19,6 +33,7 @@ return {
           bg_transparent = not bg_transparent
           vim.g.nord_disable_background = bg_transparent
           vim.cmd [[colorscheme nord]]
+          if bg_transparent then clear_bg() end
         end
 
         vim.keymap.set('n', '<leader>bg', toggle_transparency, { noremap = true, silent = true })
