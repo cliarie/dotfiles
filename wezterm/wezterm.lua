@@ -9,7 +9,7 @@ config.window_decorations = "RESIZE"
 config.default_cursor_style = "BlinkingBar"
 config.color_scheme = "Catppuccin Mocha"
 
-config.font = wezterm.font("PragmataPro Liga", { weight = "Regular" })
+config.font = wezterm.font_with_fallback({ {family="PragmataPro Liga",weight = "Regular" }, "Symbols Nerd Font Mono", })
 config.font_size = 12.5
 
 config.initial_rows = 50
