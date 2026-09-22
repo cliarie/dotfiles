@@ -1,1 +1,9 @@
+.DS_Store
+**/.DS_Store
+
 github-copilot/hosts.json
+
+# Zed user data (keep settings.json but not conversation/prompt DBs)
+zed/conversations/
+zed/prompts/
+zed/themes/
