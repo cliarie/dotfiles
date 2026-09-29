@@ -9,7 +9,15 @@ config.window_decorations = "RESIZE"
 config.default_cursor_style = "BlinkingBar"
 config.color_scheme = "Catppuccin Mocha"
 
-config.font = wezterm.font_with_fallback({ {family="PragmataPro Liga",weight = "Regular" }, "Iosevka SS08", "Symbols Nerd Font Mono", })
+-- Only ask for PragmataPro when it's installed; otherwise WezTerm warns on every load
+local fonts = { "Iosevka SS08", "Symbols Nerd Font Mono" }
+for _, dir in ipairs({ wezterm.home_dir .. "/Library/Fonts", "/Library/Fonts" }) do
+  if #wezterm.glob(dir .. "/PragmataPro*") > 0 then
+    table.insert(fonts, 1, { family = "PragmataPro Liga", weight = "Regular" })
+    break
+  end
+end
+config.font = wezterm.font_with_fallback(fonts)
 config.font_size = 12.5
 
 config.initial_rows = 50
